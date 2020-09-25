@@ -6,6 +6,11 @@ import java.util.Objects;
 
 import rmi.auth.dominio.Usuario;
 
+/**
+ * Classe para a camada DAO para realizar as consultas aos dados dos usuarios cadastrados
+ * @author ramon
+ *
+ */
 public class UsuarioRepository {
 
 	List<Usuario> usuarios = null;

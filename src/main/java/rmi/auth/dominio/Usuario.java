@@ -1,15 +1,31 @@
 package rmi.auth.dominio;
 
-public class Usuario {
+import java.io.Serializable;
 
+import rmi.auth.enums.PapelEnum;
+
+public class Usuario implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private String nome;
 	private String senha;
-	private Boolean autorizado = true;
+	private PapelEnum papel;
 
 	public Usuario(String nome, String senha) {
 		super();
 		this.nome = nome;
 		this.senha = senha;
+	}
+
+	public Usuario(String nome, String senha, PapelEnum papel) {
+		super();
+		this.nome = nome;
+		this.senha = senha;
+		this.papel = papel;
 	}
 
 	public Usuario() {
@@ -32,17 +48,18 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public Boolean getAutorizado() {
-		return autorizado;
+
+	public PapelEnum getPapel() {
+		return papel;
 	}
 
-	public void setAutorizado(Boolean autorizado) {
-		this.autorizado = autorizado;
+	public void setPapel(PapelEnum papel) {
+		this.papel = papel;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [nome=" + nome + ", senha=" + senha + ", autorizado=" + autorizado + "]";
+		return "Usuario [nome=" + nome + ", senha=" + senha + ", papel=" + papel + "]";
 	}
 
 }
